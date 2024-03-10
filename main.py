@@ -7,9 +7,15 @@ from icecream import ic
 
 
 load_dotenv()
+OPENAI_API_KEY = st.secrets["auth_token"]
+os.environ["OPENAI_API_KEY"]
+
 client = OpenAI()
 
 st.write("# Post Generator")
+
+st.write("## OpenAI API_KEY")
+key = st.text_input
 choice = st.selectbox(label="Type",options=['Mistakes','Your Mom','Yo Mama'])
 audience = st.text_input(label="Audience", placeholder="Basketball Players")
 goal = st.text_input(label="Goal", placeholder="Touch the Rim")
